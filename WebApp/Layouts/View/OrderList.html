@@ -1,0 +1,17 @@
+﻿<div class="row thumbnail  tuzz-title">
+    <span><i class="fa fa-users fa-lg"></i> Danh sách đặt cơm</span>
+</div>
+<div class="row">
+    <div class="dataTables_wrapper dataTables_paginate">
+        <table ng-table="tableUsers" class="table table-condensed table-bordered tuzz-table">
+            <tr ng-repeat="user in $data">
+                <td data-title="'Thời Gian'" sortable="'time'">{{user.time}}</td>
+                <td data-title="'Người đặt'" sortable="'person'">{{user.person}}</td>
+                <td data-title="'Món Ăn'" sortable="'food'">{{user.food}}</td>
+                <td data-title="'giá'" sortable="'price'">{{user.price}}</td>
+                <td data-title="'Action'" style="width: 13%;">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

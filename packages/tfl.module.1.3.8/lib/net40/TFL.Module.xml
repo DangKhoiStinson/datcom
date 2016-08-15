@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TFL.Module</name>
+    </assembly>
+    <members>
+        <member name="T:TFL.Module.DatabaseContext">
+            <summary>
+            Kết nối database
+            </summary>
+        </member>
+        <member name="M:TFL.Module.DatabaseContext.#ctor">
+            <summary>
+            Khởi tạo kết nối database (sử dụng connection string 'Database')
+            </summary>
+        </member>
+        <member name="M:TFL.Module.DatabaseContext.ExecuteSql(System.String,System.Object[])">
+            <summary>
+            Thực thi câu truy vấn SQL
+            </summary>
+            <param name="sql">SQL truy vấn</param>
+            <param name="param">Tham số đầu SQL</param>
+        </member>
+        <member name="M:TFL.Module.DatabaseContext.QuerySql``1(System.String,System.Object[])">
+            <summary>
+            Thực thi câu truy vấn SQL và nhận kết quả trả về
+            </summary>
+            <typeparam name="T">Kiểu dữ liệu trả về</typeparam>
+            <param name="sql">SQL truy vấn</param>
+            <param name="param">Tham số đầu SQL</param>
+        </member>
+        <member name="M:TFL.Module.DatabaseContext.ExecuteSqlFile(TFL.Module.IModule,System.String,System.Object[])">
+            <summary>
+            Thực thi câu truy vấn SQL từ file lưu trữ trong module
+            </summary>
+            <param name="module">Module</param>
+            <param name="path">Đường dẫn đến file SQL</param>
+            <param name="param">Tham số đầu SQL</param>
+        </member>
+        <member name="M:TFL.Module.DatabaseContext.QuerySqlFile``1(TFL.Module.IModule,System.String,System.Object[])">
+            <summary>
+            Thực thi câu truy vấn SQL từ file lưu trữ trong module và nhận kết quả trả về
+            </summary>
+            <typeparam name="T">Kiểu dữ liệu trả về</typeparam>
+            <param name="module">Module</param>
+            <param name="path">Đường dẫn đến file SQL</param>
+            <param name="param">Tham số đầu SQL</param>
+        </member>
+        <member name="T:TFL.Module.IModule">
+            <summary>
+            Interface Module
+            </summary>
+        </member>
+        <member name="P:TFL.Module.IModule.Name">
+            <summary>
+            Tên module
+            </summary>
+        </member>
+        <member name="P:TFL.Module.IModule.Description">
+            <summary>
+            Mô tả module
+            </summary>
+        </member>
+        <member name="P:TFL.Module.IModule.Version">
+            <summary>
+            Phiên bản
+            </summary>
+        </member>
+        <member name="P:TFL.Module.IModule.Dependency">
+            <summary>
+            Danh sách các module cần
+            </summary>
+        </member>
+        <member name="P:TFL.Module.IModule.Assembly">
+            <summary>
+            Lấy assembly
+            </summary>
+        </member>
+        <member name="M:TFL.Module.IModule.Setup(TFL.Module.DatabaseContext)">
+            <summary>
+            Phương thức cài đặt
+            </summary>
+        </member>
+        <member name="M:TFL.Module.IModule.Cleanup(TFL.Module.DatabaseContext)">
+            <summary>
+            Phương thức tháo gỡ
+            </summary>
+        </member>
+        <member name="P:TFL.Module.Module.ModuleDir">
+            <summary>
+            Đường dẫn đến thư mục chứa module, cần Reload khi có thay đổi
+            </summary>
+        </member>
+        <member name="P:TFL.Module.Module.SearchPattern">
+            <summary>
+            Search pattern các file sẽ nạp
+            </summary>
+        </member>
+        <member name="M:TFL.Module.Module.Reload">
+            <summary>
+            Nạp lại danh sách module
+            </summary>
+        </member>
+        <member name="M:TFL.Module.Module.Setup(System.String)">
+            <summary>
+            Chạy setup một module
+            </summary>
+            <param name="module">Module cần chạy setup</param>
+        </member>
+        <member name="M:TFL.Module.Module.Cleanup(System.String)">
+            <summary>
+            Chạy cleanup một module
+            </summary>
+            <param name="module">Module cần chạy cleanup</param>
+        </member>
+        <member name="M:TFL.Module.Module.ListModule">
+            <summary>
+            Danh sách module đã nhận
+            </summary>
+        </member>
+        <member name="M:TFL.Module.Module.ListMethod">
+            <summary>
+            Danh sách các method đã nhận
+            </summary>
+        </member>
+        <member name="M:TFL.Module.Module.GetMethod(System.String,System.String,System.String)">
+            <summary>
+            Lấy một method
+            </summary>
+            <param name="module">Module chứa phương thức</param>
+            <param name="name">Tên phương thức</param>
+            <param name="method">Kiểu gọi của Web Service</param>
+        </member>
+        <member name="T:TFL.Module.WebInvoke">
+            <summary>
+            Cấu hình thao tác dành cho phương thức Web
+            </summary>
+        </member>
+        <member name="P:TFL.Module.WebInvoke.Method">
+            <summary>
+            Phương thức gọi (GET / POST)
+            </summary>
+        </member>
+        <member name="P:TFL.Module.WebInvoke.IsRaw">
+            <summary>
+            Yêu cầu web service trả về dữ liệu gốc từ Data của Constant.Result&lt;string&gt;
+            </summary>
+        </member>
+        <member name="P:TFL.Module.WebInvoke.UseCache">
+            <summary>
+            Bật tính năng cache
+            </summary>
+        </member>
+        <member name="P:TFL.Module.WebInvoke.CacheDuration">
+            <summary>
+            Thời gian tồn tại của cache
+            </summary>
+        </member>
+        <member name="P:TFL.Module.WebInvoke.CacheParam">
+            <summary>
+            Danh sách các tham số để tạo cache
+            </summary>
+        </member>
+        <member name="M:TFL.Module.WebInvoke.CreateCacheKey(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Tạo cache key
+            </summary>
+            <param name="module">Tên module</param>
+            <param name="method">Tên method</param>
+            <param name="param">Danh sách tham số</param>
+            <returns>Cache key</returns>
+        </member>
+        <member name="P:TFL.Module.WebInvoke.LastUpdate">
+            <summary>
+            Thời gian cập nhật cuối
+            </summary>
+        </member>
+        <member name="P:TFL.Module.WebInvoke.Description">
+            <summary>
+            Mô tả hàm
+            </summary>
+        </member>
+        <member name="P:TFL.Module.WebInvoke.Input">
+            <summary>
+            Danh sách tham số đầu vào
+            </summary>
+        </member>
+        <member name="P:TFL.Module.WebInvoke.Output">
+            <summary>
+            Kết quả trả về của hàm
+            </summary>
+        </member>
+    </members>
+</doc>

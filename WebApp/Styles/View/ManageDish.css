@@ -1,0 +1,37 @@
+﻿/*#region [Variable]*/
+/*#endregion*/
+/*#region [Mixin]*/
+/*#endregion*/
+.menu_simple {
+  margin-left: -10px;
+  width: 185px; }
+
+.menu_simple ul {
+  border: solid black 1px;
+  margin: 0;
+  padding: 0;
+  width: 185px;
+  list-style-type: none; }
+
+.menu_simple ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 10.5px 11px;
+  background-color: #00999f;
+  display: block; }
+
+.menu_simple ul li a:visited {
+  color: white; }
+
+.menu_simple ul li a:hover, .menu_simple ul li .current {
+  color: white;
+  background-color: #f18260; }
+
+#lihead {
+  height: 40px;
+  text-align: center; }
+
+#divmonan {
+  margin-left: 180px;
+  margin-top: -248px; }
+

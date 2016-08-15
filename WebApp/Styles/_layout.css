@@ -1,0 +1,104 @@
+﻿/*#region [Variable]*/
+/*#endregion*/
+/*#region [Mixin]*/
+/*#endregion*/
+body {
+  position: relative; }
+
+.tuzz-title {
+  margin: 0,auto;
+  background: #f5f5f5;
+  border-radius: 0px !important;
+  padding: 10px; }
+  .tuzz-title span {
+    font-size: 12pt;
+    color: #f18260;
+    font-weight: 600; }
+  .tuzz-title i {
+    color: #00999f; }
+
+#tuzz-wapper {
+  background-color: #f5f5f5; }
+
+#tuzz-content {
+  padding-top: 60px;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px #eaeaea;
+  min-height: 600px; }
+
+/*food-items*/
+.tuzz-f-items {
+  position: relative; }
+  .tuzz-f-items .f-check {
+    font-weight: normal;
+    position: absolute;
+    color: #008100;
+    font-size: 20pt;
+    right: 5px;
+    top: -12px; }
+  .tuzz-f-items img {
+    height: 177px; }
+  .tuzz-f-items .thumbnail {
+    border-radius: 0px !important;
+    padding: 0px; }
+  .tuzz-f-items .f-info {
+    background-color: #00999f;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 12pt;
+    box-shadow: 0px 2px 5px; }
+    .tuzz-f-items .f-info .f-name {
+      color: #fff; }
+    .tuzz-f-items .f-info .f-price {
+      color: #fff; }
+  .tuzz-f-items .f-active {
+    border: 1px solid #f18260;
+    box-shadow: 0px 2px 10px #f18260; }
+
+.tuzz-form-login {
+  background: #eaeaea;
+  box-shadow: 0px 2px 5px;
+  padding: 10px 10px 20px 50px; }
+  .tuzz-form-login h4 {
+    margin-bottom: 10px; }
+
+.tuzz-table tbody tr:hover, .tuzz-table tbody tr:active {
+  background: #eaeaea; }
+
+.dataTables_wrapper {
+  position: relative;
+  clear: both;
+  zoom: 1; }
+
+.ng-table-header:focus {
+  outline: none; }
+
+.dataTables_paginate a, .dataTables_paginate button.btn-default {
+  padding: 6px 9px !important;
+  background: #ddd !important;
+  border-color: #ddd !important; }
+
+.dataTables_paginate > button.btn-default:focus {
+  outline: none; }
+
+/*Wigdet*/
+.tuzz-wigdet {
+  position: absolute;
+  left: 15px;
+  top: 250px;
+  background-color: #f18260;
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  box-shadow: 4px 2px 5px; }
+  .tuzz-wigdet .w-btn {
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    margin-top: 10px; }
+  .tuzz-wigdet .w-title {
+    margin-top: 10px;
+    color: #00999f;
+    font-weight: 500;
+    text-align: center; }
+

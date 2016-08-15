@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="_layoutController">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title ng-bind="title">TFL Lunch</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/Content/Image/logo.png" />
+    <base href="/">
+
+    <link type="text/css" rel="stylesheet" href="/app.min.css"/>
+    <script type="text/javascript" src="/app.min.js"></script>
+</head>
+
+<body>
+    <div id="tuzz-wapper">
+        <navbar></navbar>
+        <div id="tuzz-content" class="container">
+            <view ng-view>
+            </view>
+        </div>
+        <dfoodter></dfoodter>
+    </div>
+</body>
+
+</html>

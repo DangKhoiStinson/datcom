@@ -1,0 +1,34 @@
+﻿/*#region [Variable]*/
+/*#endregion*/
+/*#region [Mixin]*/
+/*#endregion*/
+/*navbar*/
+.activenav {
+  background: #F18260; }
+  .activenav a {
+    color: #fff; }
+
+#tuzz-nav {
+  background: #00999f;
+  box-shadow: 0px 2px 5px #9e9898; }
+  #tuzz-nav ul li {
+    border-right: 1px groove #fff; }
+    #tuzz-nav ul li a {
+      color: #eaeaea; }
+    #tuzz-nav ul li:last-child {
+      border-right: none; }
+  #tuzz-nav ul > li > a:hover, #tuzz-nav ul > li > a:focus, #tuzz-nav ul > li > a:active {
+    background: #F18260;
+    color: #fff; }
+
+/*FOODTER*/
+#tuzz-footer {
+  margin-bottom: 0,auto;
+  margin-top: 10px;
+  min-height: 100px;
+  background: #333;
+  text-align: center; }
+  #tuzz-footer p {
+    color: #fff;
+    font-weight: 800; }
+

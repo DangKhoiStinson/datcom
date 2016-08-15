@@ -1,0 +1,157 @@
+﻿<div class="menu_simple">
+<ul>
+    <li id="lihead">Chức năng</li>
+    <li><a href="/quan-li-home">Chốt danh sách đặt cơm</a></li>
+    <li><a href="/quan-li-nguoi-dat">Quản lý người đặt</a></li>
+    <li><a href="/quan-li-mon-an">Quản lý món ăn</a></li>
+    <li><a href="/doi-mat-khau">Đổi mật khẩu quản lý</a></li>
+    <li><a href="/quan-li">Thoát</a></li>
+</ul>
+</div>
+<div id="divdatcom">
+    <b>Phiên đặt cơm ngày hôm nay: ngày {{value | date : "dd/MM/yyyy"}}</b><br /><br />
+    <div class="dataTables_wrapper dataTables_paginate">
+        <table ng-table="tableconfirmed" class="table table-condensed table-bordered tuzz-table">
+            <tr ng-repeat="datcom in $data">
+                <td data-title="'Thời gian'" sortable="'thoi_gian'">{{datcom.thoi_gian}}</td>
+                <td data-title="'Người đặt'" sortable="'hoten'">{{datcom.hoten}}</td>
+                <td data-title="'Món ăn'" sortable="'ten_mon'">{{datcom.ten_mon}}</td>
+                <td data-title="'Yêu cầu riêng'" sortable="'yc_rieng'">{{datcom.yc_rieng}}</td>
+                <td data-title="'Yêu cầu thêm'" sortable="'yc_them'">{{datcom.yc_them}}</td>
+                <td data-title="'Giá món ăn'" sortable="'gia'">{{datcom.gia}}</td>
+                <td data-title="'Tiền gửi'" sortable="'tiengui'">{{datcom.tiengui}}</td>
+                <td data-title="'Trạng thái'" sortable="'trang_thai'">{{datcom.trang_thai}}</td>
+                <td data-title="'Nút chọn'">
+                    <form class="form-inline" role="form">
+                        <button data-target="#thutien" data-toggle="modal" class="btn btn-primary">Thu</button>
+                        <button class="btn btn-primary">Chốt</button>
+                        <button data-target="#baogia" data-toggle="modal" class="btn btn-primary">Báo giá</button>
+                        <button class="btn btn-primary">Hủy</button>
+                        <button data-target="#suadatcom" data-toggle="modal" class="btn btn-primary">Sửa</button>                      
+                    </form>
+                    <div class="modal fade" id="suadatcom">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Sửa phần đặt</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="hoten">Người đặt</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" id="hoten" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="phanan">Phần ăn</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" id="phanan" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="goithem">Gọi thêm</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" id="goithem" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="gia">Giá</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" id="gia" type="text" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Ghi nhận</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="thutien" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Thu tiền</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal"role="form">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="hoten">Người đặt</label>
+                                            <label class="control-label col-sm-4">Tuấn Đăng</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="phanan">Phần ăn</label>
+                                            <label class="control-label col-sm-4">Cơm sườn (không rau)</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="gia">Giá</label>
+                                            <label class="control-label col-sm-4">25.000 VNĐ</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="tiengui">Tiền gửi</label>
+                                            <label class="control-label col-sm-4">0 VNĐ</label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="nhanthem">Nhận thêm</label>
+                                            <div class="col-sm-4">
+                                                <input class="form-control" id="nhanthem" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="guicuoi">Gửi cuối</label>
+                                            <label class="control-label col-sm-4">75.000 VNĐ</label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Ghi nhận</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="baogia" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Báo giá</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="gia">Giá món ăn</label>
+                                            <div class="col-sm-3">
+                                                <input class="form-control" id="gia" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="giathem">Giá món thêm</label>
+                                            <div class="col-sm-3">
+                                                <input class="form-control" id="giathem" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-3" for="tong">Tổng cộng</label>
+                                            <label class="control-label col-sm-3">Tổng cộng</label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Ghi nhận</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

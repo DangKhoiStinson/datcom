@@ -1,0 +1,33 @@
+﻿<div class="tuzz-title row thumbnail">  
+    <div class="col-md-4">
+        <span><i class="fa fa-list"></i> Danh sách món hôm nay.</span>
+    </div>
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+        <input class="pull-right" placeholder="Tìm kiếm món ăn" ng-model="search.$" />
+    </div>
+</div>
+<div class="row">
+        <div class="col-md-3 tuzz-f-items" ng-repeat="it in foods |filter:search">
+            <div ng-class="{'f-active': isActive(it.id)}" class="f-content thumbnail" ng-click="isCheck(it)">
+                <i ng-show="active(it.id)" class="f-check fa fa-check"></i>
+                <img src="../../Content/Image/Foods/{{ it.image }}" />
+                <div class="f-info">
+                    <span class="f-name">{{it.ten}}</span>
+                    <span class="pull-right f-price">{{it.gia | currency : "vnđ":0 }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 pull-right">
+             <button ng-click="Order(check)" class="btn btn-primary">Đặt</button>
+        </div>
+</div>
+<div class="tuzz-wigdet" ng-click="onShowAlert()" is-loading="isBusy">
+    <div class="w-btn"><i class="fa fa-plus fa-2x"></i></div>
+    <div class="w-title" >Yêu cầu riêng</div>
+</div>
+
+
+<<!--h4>Home Page</h4>
+<button class="btn btn-default" ng-click="onShowAlert()" is-loading="isBusy">Show Alert</button>-->

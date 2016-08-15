@@ -1,0 +1,486 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TFL.Lib</name>
+    </assembly>
+    <members>
+        <member name="T:TFL.Lib.BitmapLib">
+            <summary>
+            Thư viện xử lý hình ảnh
+            </summary>
+        </member>
+        <member name="T:TFL.Lib.BitmapLib.Position">
+            <summary>
+            Vị trí ảnh
+            </summary>
+        </member>
+        <member name="F:TFL.Lib.BitmapLib.Position.TopLeft">
+            <summary>
+            Trên trái
+            </summary>
+        </member>
+        <member name="F:TFL.Lib.BitmapLib.Position.Top">
+            <summary>
+            Trên
+            </summary>
+        </member>
+        <member name="F:TFL.Lib.BitmapLib.Position.TopRight">
+            <summary>
+            Trên phải
+            </summary>
+        </member>
+        <member name="F:TFL.Lib.BitmapLib.Position.Left">
+            <summary>
+            Trái
+            </summary>
+        </member>
+        <member name="F:TFL.Lib.BitmapLib.Position.Center">
+            <summary>
+            Chính giữa
+            </summary>
+        </member>
+        <member name="F:TFL.Lib.BitmapLib.Position.Right">
+            <summary>
+            Phải
+            </summary>
+        </member>
+        <member name="F:TFL.Lib.BitmapLib.Position.BottomLeft">
+            <summary>
+            Dưới trái
+            </summary>
+        </member>
+        <member name="F:TFL.Lib.BitmapLib.Position.Bottom">
+            <summary>
+            Dưới
+            </summary>
+        </member>
+        <member name="F:TFL.Lib.BitmapLib.Position.BottomRight">
+            <summary>
+            Dưới phải
+            </summary>
+        </member>
+        <member name="M:TFL.Lib.BitmapLib.Resize(System.Drawing.Bitmap,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Thay đổi kích thước ảnh và giữ nguyên tỉ lệ ảnh
+            </summary>
+            <param name="image">Hình cần xử lý</param>
+            <param name="width">Chiều ngang mới, phải lớn hơn 0</param>
+            <param name="height">Chiều dọc mới, phải lớn hơn 0</param>
+            <param name="keepAspectRatio">Có duy trì tỷ lệ của ảnh hay không?</param>
+            <returns>Ảnh mới với kích thước chỉ định</returns>
+        </member>
+        <member name="M:TFL.Lib.BitmapLib.Crop(System.Drawing.Bitmap,System.Int32,System.Int32,TFL.Lib.BitmapLib.Position)">
+            <summary>
+            Crop ảnh với kích thước chỉ định
+            </summary>
+            <param name="image">Hình cần xử lý</param>
+            <param name="width">Chiều ngang mới, phải lớn hơn 0</param>
+            <param name="height">Chiều dọc mới, phải lớn hơn 0</param>
+            <param name="position">Vị trí tâm của ảnh</param>
+            <returns>Ảnh mới với kích thước chỉ định</returns>
+        </member>
+        <member name="M:TFL.Lib.BitmapLib.SetJpegQualityLevel(System.Drawing.Bitmap,System.Int64)">
+            <summary>
+            Đặt chất lượng ảnh JPEG
+            </summary>
+            <param name="image">Ảnh cần xử lý, chỉ hỗ trợ ảnh JPEG</param>
+            <param name="qualityLevel">Chất lượng (0 - 100)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TFL.Lib.BitmapLib.GetMostUsedColors(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            Lấy danh sách 10 màu được sử dụng nhiều nhất trong ảnh
+            </summary>
+            <param name="image">Ảnh cần xử lý</param>
+            <param name="accuracy">Độ chính xác (1 - 100)</param>
+            <returns>Danh sách 10 màu được sử dụng nhiều nhất trong ảnh</returns>
+        </member>
+        <member name="M:TFL.Lib.CollectionLib.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Kiểm tra xem danh sách có null hoặc không có phần tử hay không
+            </summary>
+            <typeparam name="T">Kiểu phần tử của danh sách</typeparam>
+            <param name="items">Mảng cần xử lý</param>
+            <returns>Kết quả kiểm tra</returns>
+        </member>
+        <member name="M:TFL.Lib.CollectionLib.FirstIndex``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Tìm index của phần tử đầu tiên thỏa điều kiện
+            </summary>
+            <param name="items">Danh sách phần tử</param>
+            <param name="predicate">Điều kiện</param>
+            <typeparam name="T">Kiểu phần tử của danh sách</typeparam>
+            <returns>Index của phần tử thỏa điều kiện hoặc -1 nếu không tìm thấy</returns>
+        </member>
+        <member name="M:TFL.Lib.CollectionLib.FirstOrDefaultFrom``2(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``1,System.Boolean})">
+            <summary>
+            Lấy phần tử ứng với index tìm thấy từ một danh sách khác
+            </summary>
+            <typeparam name="T1">Kiểu phần tử của danh sách nguồn</typeparam>
+            <typeparam name="T2">Kiểu phần tử của danh sách kiểm tra</typeparam>
+            <param name="items">Danh sách nguồn</param>
+            <param name="checkSource">Danh sách kiểm tra</param>
+            <param name="predicate">Điều kiện</param>
+            <returns>Phần tử trong danh sách nguồn</returns>
+        </member>
+        <member name="T:TFL.Lib.Constant">
+            <summary>
+            Các hằng số, đối tượng chung
+            </summary>
+        </member>
+        <member name="T:TFL.Lib.Constant.Result">
+            <summary>
+            Kết quả xử lý
+            </summary>
+        </member>
+        <member name="P:TFL.Lib.Constant.Result.Status">
+            <summary>
+            Trạng thái
+            </summary>
+        </member>
+        <member name="P:TFL.Lib.Constant.Result.Message">
+            <summary>
+            Thông báo
+            </summary>
+        </member>
+        <member name="T:TFL.Lib.Constant.Result`1">
+            <summary>
+            Kết quả xử lý
+            </summary>
+            <typeparam name="T">Kiểu đối tượng kết quả</typeparam>
+        </member>
+        <member name="P:TFL.Lib.Constant.Result`1.Data">
+            <summary>
+            Dữ liệu trả về
+            </summary>
+        </member>
+        <member name="T:TFL.Lib.Constant.PageResult`1">
+            <summary>
+            Kết quả xử lý
+            </summary>
+            <typeparam name="T">Kiểu đối tượng</typeparam>
+        </member>
+        <member name="P:TFL.Lib.Constant.PageResult`1.Data">
+            <summary>
+            Dữ liệu trả về
+            </summary>
+        </member>
+        <member name="P:TFL.Lib.Constant.PageResult`1.Total">
+            <summary>
+            Tổng số phần tử
+            </summary>
+        </member>
+        <member name="P:TFL.Lib.Constant.PageResult`1.PageIndex">
+            <summary>
+            Vị trí trang hiện tại
+            </summary>
+        </member>
+        <member name="P:TFL.Lib.Constant.PageResult`1.PageSize">
+            <summary>
+            Kích thước trang
+            </summary>
+        </member>
+        <member name="T:TFL.Lib.Constant.JsonNode">
+            <summary>
+            Đối tượng xử lý của ToJson
+            </summary>
+        </member>
+        <member name="P:TFL.Lib.Constant.JsonNode.IsHandled">
+            <summary>
+            Đối tượng đã được xử lý chưa?
+            </summary>
+        </member>
+        <member name="P:TFL.Lib.Constant.JsonNode.Name">
+            <summary>
+            Tên trường
+            </summary>
+        </member>
+        <member name="P:TFL.Lib.Constant.JsonNode.Value">
+            <summary>
+            Dữ liệu của trường
+            </summary>
+        </member>
+        <member name="M:TFL.Lib.DateLib.DaysInMonth(System.DateTime)">
+            <summary>
+            Lấy số ngày trong tháng
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.StartOfMinute(System.DateTime)">
+            <summary>
+            Lấy thời điểm đầu phút
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.EndOfMinute(System.DateTime)">
+            <summary>
+            Lấy thời điểm cuối phút
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.StartOfHour(System.DateTime)">
+            <summary>
+            Lấy thời điểm đầu giờ
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.EndOfHour(System.DateTime)">
+            <summary>
+            Lấy thời điểm cuối giờ
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.StartOfDay(System.DateTime)">
+            <summary>
+            Lấy thời điểm đầu ngày
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.EndOfDay(System.DateTime)">
+            <summary>
+            Lấy thời điểm cuối ngày
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.StartOfWeek(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Lấy thời điểm đầu tuần
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <param name="startOfWeek">Thời điểm bắt đầu tuần</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.EndOfWeek(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Lấy thời điểm cuối tuần
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <param name="startOfWeek">Thời điểm bắt đầu tuần</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.StartOfMonth(System.DateTime)">
+            <summary>
+            Lấy thời điểm đầu tháng
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.EndOfMonth(System.DateTime)">
+            <summary>
+            Lấy thời điểm cuối tháng
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.StartOfYear(System.DateTime)">
+            <summary>
+            Lấy thời điểm đầu năm
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.EndOfYear(System.DateTime)">
+            <summary>
+            Lấy thời điểm cuối năm
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.ToTimestamp(System.DateTime)">
+            <summary>
+            Chuyển kiểu DateTime sang Timestamp
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.FromTimestamp(System.Int64)">
+            <summary>
+            Chuyển kiểu Timestamp sang DateTime
+            </summary>
+            <param name="milliseconds">Timestamp cần xử lý</param>
+            <returns>Kết quả xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.DateLib.ToDistanceString(System.DateTime,System.Nullable{System.DateTime},System.Int64,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Xuất ra khoảng thời gian
+            </summary>
+            <param name="date">Thời điểm cần xử lý</param>
+            <param name="targetDate">Thời điểm làm mốc, nếu để null mặc định sẽ là thời điểm hiện tại</param>
+            <param name="secondsIsNow">Số giây cách biệt để được coi là tức thì</param>
+            <param name="dayRange">Số lượng ngày tối đa hiển thị, nếu số ngày vượt quá khoảng sẽ sử dụng chuỗi định dạng thời gian</param>
+            <param name="nowText">Chuỗi tức thì</param>
+            <param name="secondsAgo">Chuỗi bao nhiêu giây trước</param>
+            <param name="secondsMore">Chuỗi bao nhiêu giây nữa</param>
+            <param name="minutesAgo">Chuỗi bao nhiêu phút trước</param>
+            <param name="minutesMore">Chuỗi bao nhiêu phút nữa</param>
+            <param name="hoursAgo">Chuỗi bao nhiêu giờ trước</param>
+            <param name="hoursMore">Chuỗi bao nhiêu giờ nữa</param>
+            <param name="daysAgo">Chuỗi bao nhiêu ngày trước</param>
+            <param name="daysMore">Chuỗi bao nhiêu ngày nữa</param>
+            <param name="dateTimeFormat">Định dạng thời gian sẽ hiển thị khi ngoài khoảng</param>
+            <returns>Chuỗi kết quả</returns>
+        </member>
+        <member name="M:TFL.Lib.EnumLib.ToArray``1">
+            <summary>
+            Lấy danh sách các phần tử của 1 kiểu enum
+            </summary>
+            <typeparam name="T">Kiểu enum cần xử lý</typeparam>
+            <returns>Danh sách các phần tử</returns>
+        </member>
+        <member name="M:TFL.Lib.ExceptionLib.GetFullMessage(System.Exception)">
+            <summary>
+            Lấy thông báo lỗi
+            </summary>
+            <param name="exception">Lỗi cần lấy thông báo</param>
+            <returns>Thông báo lỗi</returns>
+        </member>
+        <member name="M:TFL.Lib.NumberLib.ToShortText(System.Double,System.String,System.String,System.String)">
+            <summary>
+            Xuất chuỗi rút gọn của số
+            </summary>
+            <param name="number">Số xử lý</param>
+            <param name="thousandText">Ký tự phần ngàn</param>
+            <param name="millionText">Ký tự phần triệu</param>
+            <param name="billionText">Ký tự phần tỷ</param>
+            <returns>Chuỗi kết quả</returns>
+        </member>
+        <member name="T:TFL.Lib.ObjectLib">
+            <summary>
+            Thư viện xử lý đối tượng
+            </summary>
+        </member>
+        <member name="M:TFL.Lib.ObjectLib.ToJson(System.Object,System.String,System.Nullable{System.Int32},System.Action{TFL.Lib.Constant.JsonNode})">
+            <summary>
+            Mã hóa tượng thành chuỗi Json
+            </summary>
+            <param name="o">Đối tượng cần xử lý</param>
+            <param name="query">Danh sách các property cần lọc</param>
+            <param name="maxLevel">Số cấp tối đa cho phép lấy. Để null nếu muốn lấy tất cả</param>
+            <param name="processor">Hàm can thiệp quá trình xử lý dữ liệu</param>
+            <returns>Chuỗi Json</returns>
+        </member>
+        <member name="M:TFL.Lib.ObjectLib.ToExpando(System.Object,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Chuyển đối tượng thành Expando
+            </summary>
+            <param name="o">Đối tượng cần xử lý</param>
+            <param name="query">Danh sách các property cần lọc</param>
+            <param name="maxLevel">Số cấp tối đa cho phép lấy. Để null nếu muốn lấy tất cả</param>
+            <returns>Expando object</returns>
+        </member>
+        <member name="M:TFL.Lib.ObjectLib.CloneObject``1(``0)">
+            <summary>
+            Sao chép đối tượng.
+            Ưu tiên: Serializable object -> Anonymous class object -> Base class object
+            Đối với kiểu base class object, không thể clone các non-public field, read-only property, write-only property.</summary>
+            <typeparam name="T">Kiểu của đối tượng</typeparam>
+            <param name="o">Đối tượng cần sao chép</param>
+            <returns>Đối tượng đã sao chép</returns>
+        </member>
+        <member name="M:TFL.Lib.ObjectLib.ToDict(System.Object)">
+            <summary>
+            Chuyển nhanh một đối tượng thành Dictionary
+            </summary>
+            <param name="o">Đối tượng cần chuyển</param>
+            <returns>Kết quả</returns>
+        </member>
+        <member name="M:TFL.Lib.ObjectLib.GetProperty``1(System.Object,System.String)">
+            <summary>
+            Lấy giá trị property từ đối tượng theo tên
+            </summary>
+            <typeparam name="T">Kiểu trả về</typeparam>
+            <param name="o">Đối tượng cần lấy</param>
+            <param name="propertyName">Tên property cần lấy</param>
+            <returns>Giá trị của property</returns>
+        </member>
+        <member name="M:TFL.Lib.ObjectLib.GetTextResource(System.Reflection.Assembly,System.String)">
+            <summary>
+            Lấy dữ liệu dạng text từ resource
+            </summary>
+            <param name="assembly">Assembly chứa resource</param>
+            <param name="resource">Resource cần lấy</param>
+        </member>
+        <member name="T:TFL.Lib.StringLib">
+            <summary>
+            Thư viện xử lý chuỗi
+            </summary>
+        </member>
+        <member name="M:TFL.Lib.StringLib.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            Kiểm tra chuỗi null hoặc toàn khoảng trống
+            </summary>
+            <param name="text">Chuỗi cần kiểm tra</param>
+            <returns>Kết quả kiểm tra</returns>
+        </member>
+        <member name="M:TFL.Lib.StringLib.ClearWhiteSpace(System.String)">
+            <summary>
+            Xóa các khoảng trắng thừa trong chuỗi
+            </summary>
+            <param name="text">Chuỗi cần xử lý</param>
+            <returns>Chuỗi đã xử lý</returns>
+        </member>
+        <member name="M:TFL.Lib.StringLib.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.Nullable{System.TimeSpan})">
+            <summary>
+            Kiểm tra chuỗi có khớp với mẫu Regex chỉ định
+            </summary>
+            <param name="text">Chuổi cần kiểm tra</param>
+            <param name="pattern">Mẫu cần kiểm tra</param>
+            <param name="options">Thiết lập quá trình kiếm tra</param>
+            <param name="matchTimeout">Thời gian tối đa cho phép của quá trình kiểm tra</param>
+            <returns>Kết quả kiểm tra</returns>
+        </member>
+        <member name="M:TFL.Lib.StringLib.Random(System.Int32)">
+            <summary>
+            Phát sinh chuỗi ngẫu nhiên
+            </summary>
+            <param name="length">Độ dài chuỗi</param>
+            <returns>Chuỗi ngẫu nhiên</returns>
+        </member>
+        <member name="M:TFL.Lib.StringLib.ClearVietnamseSign(System.String)">
+            <summary>
+            Xóa dấu tiếng việt
+            </summary>
+            <param name="text">Chuỗi cần xóa dấu</param>
+            <returns>Chuỗi đã được xóa dấu</returns>
+        </member>
+        <member name="M:TFL.Lib.StringLib.EclipseByCharacter(System.String,System.Int32,System.String)">
+            <summary>
+            Cắt chuỗi lấy đúng số chữ chỉ định
+            </summary>
+            <param name="text">Chuỗi cần cắt</param>
+            <param name="numberOfCharacters">Số chữ muốn lấy</param>
+            <param name="eclipseMask">Chuỗi ký tự cuối nếu có việc cắt xảy ra</param>
+            <returns>Chuỗi đã được cắt</returns>
+        </member>
+        <member name="M:TFL.Lib.StringLib.EclipseByWord(System.String,System.Int32,System.String)">
+            <summary>
+            Cắt chuỗi lấy đúng số từ đã chỉ định
+            </summary>
+            <param name="text">Chuỗi cần cắt</param>
+            <param name="numberOfWords">Số từ muốn lấy</param>
+            <param name="eclipseMask">Chuỗi ký tự cuối nếu có việc cắt xảy ra</param>
+            <returns>Chuỗi đã được cắt</returns>
+        </member>
+        <member name="M:TFL.Lib.StringLib.EncodeMd5(System.String)">
+            <summary>
+            Mã hóa chuỗi theo phương thức Md5
+            </summary>
+            <param name="text">Chuỗi cần xử lý</param>
+            <returns>Chuỗi sau khi mã hóa</returns>
+        </member>
+        <member name="M:TFL.Lib.StringLib.EncodeSha1(System.String)">
+            <summary>
+            Mã hóa chuỗi theo phương thức SHA1
+            </summary>
+            <param name="text">Chuỗi cần xử lý</param>
+            <returns>Chuỗi sau khi mã hóa</returns>
+        </member>
+    </members>
+</doc>

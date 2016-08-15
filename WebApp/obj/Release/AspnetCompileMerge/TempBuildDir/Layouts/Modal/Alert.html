@@ -1,0 +1,10 @@
+﻿<div class="modal-header" ng-if="title">
+    <h5 class="modal-title" ng-bind-html="title"></h5>
+</div>
+
+<div class="modal-body" ng-bind-html="message" ng-if="message">
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn {{x.style}}" ng-repeat="x in buttons" ng-click="onButtonClick($index)">{{x.text}}</button>
+</div>

@@ -1,0 +1,69 @@
+﻿<div class="menu_simple">
+    <ul>
+        <li id="lihead">Chức năng</li>
+        <li><a href="/quan-li-home">Chốt danh sách đặt cơm</a></li>
+        <li><a href="/quan-li-nguoi-dat">Quản lý người đặt</a></li>
+        <li><a href="/quan-li-mon-an">Quản lý món ăn</a></li>
+        <li><a href="/doi-mat-khau">Đổi mật khẩu quản lý</a></li>
+        <li><a href="/quan-li">Thoát</a></li>
+    </ul>
+</div>
+<div id="divmonan">
+    <form class="form-inline" role="form">
+        <button data-target="#themmoimon" data-toggle="modal" class="btn btn-primary">Thêm mới</button>
+        <input class="form-control" type="text" placeholder="Tìm theo tên" ng-model="searchdish" />
+        <input class="form-control" type="submit" value="Hiện mục bị khóa" />
+    </form>
+    <div id="themmoimon" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Thêm mới món ăn</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="ten">Tên</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" id="ten" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="gia">Giá</label>
+                            <div class="col-sm-3">
+                                <input class="form-control" id="gia" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="hinh">Hình</label>
+                            <div class="col-sm-4">
+                                <input class="form-control im" id="hinh" type="text"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Ghi nhận</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="dataTables_wrapper dataTables_paginate">
+        <table ng-table="tabledish" class="table table-condensed table-bordered tuzz-table">
+            <tr ng-repeat="dish in $data|filter:searchdish">
+                <td data-title="'Tên'" sortable="'ten'" style="width: 30px">{{dish.ten}}</td>
+                <td data-title="'Giá'" sortable="'gia'" style="width: 30px">{{dish.gia}}</td>
+                <td data-title="'Nút chọn'" style="width: 30px">
+                    <form class="form-inline" role="form">
+                        <input class="form-control" type="submit" value="Sửa" />
+                        <input class="form-control" type="submit" value="Khóa" />
+                        <input class="form-control" type="submit" value="Mở khóa" />
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

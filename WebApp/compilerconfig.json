@@ -1,0 +1,46 @@
+﻿[
+  {
+    "outputFile": "Styles/View/Home.css",
+    "inputFile": "Styles/View/Home.scss"
+  },
+  {
+    "outputFile": "Styles/View/Error.css",
+    "inputFile": "Styles/View/Error.scss"
+  },
+  {
+    "outputFile": "Styles/_layout.css",
+    "inputFile": "Styles/_layout.scss"
+  },
+  {
+    "outputFile": "app.es5.js",
+    "inputFile": "app.js"
+  },
+  {
+    "outputFile": "Styles/Template/_navbar.css",
+    "inputFile": "Styles/Template/_navbar.scss"
+  },
+  {
+    "outputFile": "Styles/Template/_navbarFooter.css",
+    "inputFile": "Styles/Template/_navbarFooter.scss"
+  },
+  {
+    "outputFile": "Styles/View/SaveMoney.css",
+    "inputFile": "Styles/View/SaveMoney.scss"
+  },
+  {
+    "outputFile": "Styles/View/ManageHome.css",
+    "inputFile": "Styles/View/ManageHome.scss"
+  },
+  {
+    "outputFile": "Styles/View/ManageOrderPerson.css",
+    "inputFile": "Styles/View/ManageOrderPerson.scss"
+  },
+  {
+    "outputFile": "Styles/View/ManageDish.css",
+    "inputFile": "Styles/View/ManageDish.scss"
+  },
+  {
+    "outputFile": "Styles/View/DoiMK.css",
+    "inputFile": "Styles/View/DoiMK.scss"
+  }
+]

@@ -1,0 +1,42 @@
+﻿@import "../core";
+
+/*navbar*/
+.activenav{
+    background:#F18260;
+    a{
+        color:#fff;
+    }
+}
+#tuzz-nav{
+    background:#00999f;
+        box-shadow: 0px 2px 5px #9e9898;
+    ul{
+            li{
+                border-right: 1px groove #fff;
+                a{
+                    color:#eaeaea;
+                } 
+                &:last-child{
+                    border-right:none;
+                } 
+            }
+            >li>a:hover,>li>a:focus,>li>a:active{
+                    background:#F18260;
+                    color: #fff;
+            }
+    }
+
+}
+
+/*FOODTER*/
+#tuzz-footer{
+    margin-bottom:0,auto;
+    margin-top:10px;
+    min-height: 100px;
+    background:#333;
+    text-align:center;
+    p{
+        color:#fff;
+        font-weight:800;
+    }
+}

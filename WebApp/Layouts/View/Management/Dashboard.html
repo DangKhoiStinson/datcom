@@ -1,0 +1,12 @@
+﻿
+<form ng-submit="formsubmit()" name="myform" class="tuzz-form-login form-inline  col-md-4 col-md-offset-4 col-sm-12" >
+    <h4 style="text-align:center">Đăng nhập</h4>
+    <div class="form-group text-center">
+        <lable class="control-label">Mật khẩu</lable>
+        <input id="mk" name="input" class="form-control" type="password" placeholder="Mật khẩu"ng-model="matkhau" required ng-minlength="4" ng-maxlength="12"/>
+        <br />
+        <span ng-show="myform.input.$untouched || myform.input.$touched && myform.input.$invalid">Hãy nhập mật khẩu từ 4 đến 12 kí tự</span>
+        <br />
+        <input class="form-control" type="submit" value="Đăng nhập" />
+    </div>
+</form>

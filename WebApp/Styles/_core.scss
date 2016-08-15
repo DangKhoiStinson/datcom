@@ -1,0 +1,62 @@
+﻿/*#region [Variable]*/
+
+$color-primary: #f15d69;
+$color-cam: #f18260;
+$color-xanh: #00999f;
+$color-bg:#f5f5f5;
+/*#endregion*/
+
+/*#region [Mixin]*/
+
+
+
+
+@mixin text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+@mixin pos-center {
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@mixin pos-center-h {
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@mixin pos-center-v {
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin clearfix {
+    &:after {
+        display: table;
+        content: " ";
+        clear: both;
+    }
+}
+
+@mixin fa {
+    font-family: FontAwesome;
+}
+
+/*#endregion*/
